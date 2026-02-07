@@ -54,9 +54,11 @@ export function PortfolioShell() {
   const ActiveComponent = activeView !== "home" ? viewComponents[activeView] : null
 
   return (
-    <div className="flex h-screen w-full flex-col overflow-hidden bg-background md:flex-row">
+    <div className="flex h-screen w-full flex-col overflow-hidden bg-background md:flex-row" style={{
+      backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(239, 68, 68, 0.4), transparent 35%), radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.4), transparent 35%), linear-gradient(135deg, #1f0000 0%, #000000 40%, #000000 60%, #001f3f 100%)'
+    }}>
       {/* Sidebar - Desktop */}
-      <aside className="hidden w-64 shrink-0 flex-col justify-between border-r border-border/50 p-8 md:flex lg:w-72">
+      <aside className="hidden w-64 shrink-0 flex-col justify-between border-r border-border/20 bg-black/20 backdrop-blur-sm p-8 md:flex lg:w-72">
         <div className="flex flex-col gap-8">
           {/* Identity */}
           <button
@@ -139,7 +141,7 @@ export function PortfolioShell() {
       </aside>
 
       {/* Mobile Header */}
-      <header className="flex items-center justify-between border-b border-border/50 p-4 md:hidden">
+      <header className="flex items-center justify-between border-b border-border/20 bg-black/20 backdrop-blur-sm p-4 md:hidden">
         <button
           type="button"
           onClick={() => navigateTo("home")}
@@ -173,9 +175,9 @@ export function PortfolioShell() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex flex-col bg-background/98 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-sm md:hidden"
           >
-            <div className="flex items-center justify-between border-b border-border/50 p-4">
+            <div className="flex items-center justify-between border-b border-border/20 p-4">
               <span className="text-sm font-bold text-foreground">chanrute</span>
               <button
                 type="button"
@@ -205,7 +207,7 @@ export function PortfolioShell() {
                 </motion.button>
               ))}
             </nav>
-            <div className="flex items-center gap-4 border-t border-border/50 p-6">
+            <div className="flex items-center gap-4 border-t border-border/20 p-6">
               <a href="https://github.com/chanrute" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary">
                 <Github className="h-5 w-5" />
               </a>
@@ -270,7 +272,7 @@ export function PortfolioShell() {
               animate="visible"
               exit="exit"
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="h-full w-full max-w-3xl overflow-y-auto rounded-xl bg-card/30 p-6 md:p-8"
+              className="h-full w-full max-w-3xl overflow-y-auto rounded-xl bg-black/30 backdrop-blur-md border border-white/10 p-6 md:p-8"
             >
               {ActiveComponent && <ActiveComponent />}
             </motion.div>

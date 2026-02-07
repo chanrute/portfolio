@@ -6,6 +6,7 @@ import { useState, useCallback } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X, Github, Linkedin, Twitter } from "lucide-react"
 import Image from "next/image"
+import { useLanguage } from "@/lib/language-context"
 import { AboutSection } from "@/components/sections/about-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
 import { SkillsSection } from "@/components/sections/skills-section"
@@ -15,15 +16,6 @@ import { SNSSection } from "@/components/sections/sns-section"
 import { ResumeSection } from "@/components/sections/resume-section"
 
 type View = "home" | "about" | "projects" | "achievements" | "blog" | "sns" | "resume"
-
-const navItems: { label: string; view: View }[] = [
-  { label: "About", view: "about" },
-  { label: "Projects", view: "projects" },
-  { label: "Achievements", view: "achievements" },
-  { label: "Blog", view: "blog" },
-  { label: "Connect", view: "sns" },
-  { label: "Resume", view: "resume" },
-]
 
 const viewComponents: Record<Exclude<View, "home">, React.ComponentType> = {
   about: AboutSection,
@@ -43,6 +35,16 @@ const containerVariants = {
 export function PortfolioShell() {
   const [activeView, setActiveView] = useState<View>("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { language, setLanguage, t } = useLanguage()
+
+  const navItems = [
+    { label: t.nav.about, view: "about" as const },
+    { label: t.nav.projects, view: "projects" as const },
+    { label: t.nav.achievements, view: "achievements" as const },
+    { label: t.nav.blog, view: "blog" as const },
+    { label: t.nav.connect, view: "sns" as const },
+    { label: t.nav.resume, view: "resume" as const },
+  ]
 
   const navigateTo = useCallback((view: View) => {
     setActiveView(view)
@@ -57,7 +59,7 @@ export function PortfolioShell() {
     }}>
       {/* Fixed Top Navigation */}
       <header className="fixed top-0 left-0 right-0 z-40 border-b border-border/20 bg-black/20 backdrop-blur-md">
-        <div className="mx-auto flex max-w-full items-center justify-center gap-8 px-4 py-4 md:gap-12 md:px-8 md:py-5">
+        <div className="mx-auto flex w-full max-w-full items-center justify-between gap-8 px-4 py-4 md:px-8 md:py-5">
           <button
             type="button"
             onClick={() => navigateTo("home")}
@@ -81,14 +83,23 @@ export function PortfolioShell() {
               </button>
             ))}
           </nav>
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            className="rounded-lg p-1.5 text-muted-foreground transition-colors hover:text-foreground md:hidden"
-          >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              onClick={() => setLanguage(language === "en" ? "ja" : "en")}
+              className="rounded-lg px-3 py-1.5 text-sm font-mono text-muted-foreground transition-colors hover:text-primary"
+            >
+              {language === "en" ? "ja" : "en"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              className="rounded-lg p-1.5 text-muted-foreground transition-colors hover:text-foreground md:hidden"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -162,7 +173,7 @@ export function PortfolioShell() {
                   chanrute
                 </h1>
                 <p className="font-mono text-lg text-muted-foreground">
-                  Engineer & Creative
+                  {t.home.tagline}
                 </p>
               </div>
 

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
 const projects = [
   {
@@ -43,11 +44,12 @@ const projects = [
 ]
 
 export function ProjectsSection() {
+  const { t } = useLanguage()
   return (
     <div className="flex flex-col gap-6">
       <div>
         <h2 className="text-3xl font-bold tracking-tight text-foreground">
-          Projects
+          {t.projects.title}
         </h2>
         <div className="mt-2 h-px w-12 bg-primary" />
       </div>

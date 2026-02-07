@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Download, FileText } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
 const experience = [
   {
@@ -37,12 +38,13 @@ const experience = [
 ]
 
 export function ResumeSection() {
+  const { t } = useLanguage()
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-start justify-between">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
-            Resume
+            {t.resume.title}
           </h2>
           <div className="mt-2 h-px w-12 bg-primary" />
         </div>
@@ -51,7 +53,7 @@ export function ResumeSection() {
           className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-base font-medium text-background transition-opacity hover:opacity-90"
         >
           <Download className="h-4 w-4" />
-          Download PDF
+          {t.resume.download}
         </a>
       </div>
 
@@ -105,7 +107,7 @@ export function ResumeSection() {
         </h3>
         <div className="rounded-lg bg-card/50 p-6">
           <h4 className="text-lg font-semibold text-foreground">
-            Languages & Frameworks
+            {t.resume.languages}
           </h4>
           <p className="mt-3 text-base text-muted-foreground">
             Kotlin (Ktor), TypeScript (Vue.js, Next.js), Python, Ruby, Flutter
@@ -113,7 +115,7 @@ export function ResumeSection() {
         </div>
         <div className="rounded-lg bg-card/50 p-6">
           <h4 className="text-lg font-semibold text-foreground">
-            Cloud & Tools
+            {t.resume.cloud}
           </h4>
           <p className="mt-3 text-base text-muted-foreground">
             AWS, LLM Integration, Docker, Git, CI/CD

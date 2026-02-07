@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, ExternalLink } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
 const links = [
   {
@@ -28,17 +29,18 @@ const links = [
 ]
 
 export function SNSSection() {
+  const { t } = useLanguage()
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-8">
       <div>
         <h2 className="text-3xl font-bold tracking-tight text-foreground">
-          Connect
+          {t.sns.title}
         </h2>
         <div className="mt-2 h-px w-12 bg-primary" />
       </div>
 
       <p className="max-w-md text-base leading-relaxed text-muted-foreground">
-        Feel free to reach out for collaborations, speaking engagements, or just a conversation about technology and design.
+        {t.sns.description}
       </p>
 
       <div className="flex flex-col gap-3">

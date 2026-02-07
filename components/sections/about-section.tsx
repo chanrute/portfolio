@@ -2,14 +2,16 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useLanguage } from "@/lib/language-context"
 
-const skills = {
+const skillsData = {
   "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"],
   "Backend": ["Node.js", "Python", "Go", "REST APIs", "GraphQL"],
   "Cloud & DevOps": ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"],
 }
 
 export function AboutSection() {
+  const { t } = useLanguage()
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
@@ -24,28 +26,29 @@ export function AboutSection() {
         <div className="flex flex-col gap-4">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-foreground">
-              About Me
+              {t.about.title}
             </h2>
             <div className="mt-1 h-px w-12 bg-primary" />
           </div>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
-            I am a passionate full-stack engineer and creative technologist with a deep interest in building
-            elegant, high-performance digital experiences. Currently focused on cloud-native architectures
-            and modern frontend frameworks, I thrive at the intersection of design and engineering.
+            {t.about.description1}
           </p>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
-            When I am not writing code, you can find me exploring new technologies, contributing to open-source
-            projects, and sharing knowledge through technical writing and mentorship.
+            {t.about.description2}
           </p>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
         <h3 className="font-mono text-xs uppercase tracking-widest text-primary">
-          Core Technologies
+          {t.about.coretech}
         </h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {Object.entries(skills).map(([category, items], i) => (
+          {Object.entries(skillsData).map(([category, items], i) => {
+            const translatedCategory = category === "Frontend" ? t.about.frontend : 
+                                      category === "Backend" ? t.about.backend : 
+                                      t.about.devops
+            return (
             <motion.div
               key={category}
               initial={{ opacity: 0, y: 12 }}
@@ -54,7 +57,7 @@ export function AboutSection() {
               className="rounded-lg bg-card/50 p-4"
             >
               <h4 className="mb-3 font-mono text-xs uppercase tracking-wider text-primary/70">
-                {category}
+                {translatedCategory}
               </h4>
               <ul className="flex flex-col gap-2">
                 {items.map((skill) => (
@@ -66,9 +69,10 @@ export function AboutSection() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            )
+          })}
+          </div>
       </div>
     </div>
   )

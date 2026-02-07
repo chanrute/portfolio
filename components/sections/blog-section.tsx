@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
 const posts = [
   {
@@ -47,11 +48,12 @@ const posts = [
 ]
 
 export function BlogSection() {
+  const { t } = useLanguage()
   return (
     <div className="flex flex-col gap-6">
       <div>
         <h2 className="text-3xl font-bold tracking-tight text-foreground">
-          Blog
+          {t.blog.title}
         </h2>
         <div className="mt-2 h-px w-12 bg-primary" />
       </div>

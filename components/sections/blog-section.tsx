@@ -50,10 +50,10 @@ export function BlogSection() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground">
           Blog
         </h2>
-        <div className="mt-1 h-px w-12 bg-primary" />
+        <div className="mt-2 h-px w-12 bg-primary" />
       </div>
 
       <div className="flex flex-col gap-2">
@@ -64,24 +64,24 @@ export function BlogSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.06 * i, duration: 0.4, ease: "easeOut" }}
-            className="group flex items-start justify-between gap-4 rounded-lg px-4 py-3.5 transition-colors hover:bg-card/50"
+            className="group flex items-start justify-between gap-4 rounded-lg px-5 py-4 transition-colors hover:bg-card/50"
           >
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <h3 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-medium text-foreground group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                <ArrowUpRight className="h-3 w-3 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
               </div>
-              <p className="text-xs leading-relaxed text-muted-foreground">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 {post.excerpt}
               </p>
             </div>
-            <div className="flex shrink-0 flex-col items-end gap-1">
-              <span className="font-mono text-xs text-muted-foreground">
+            <div className="flex shrink-0 flex-col items-end gap-2">
+              <span className="font-mono text-sm text-muted-foreground">
                 {post.date}
               </span>
-              <span className="rounded bg-primary/10 px-1.5 py-0.5 font-mono text-[10px] text-primary">
+              <span className="rounded bg-primary/10 px-2 py-1 font-mono text-xs text-primary">
                 {post.tag}
               </span>
             </div>

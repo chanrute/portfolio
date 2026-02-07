@@ -76,10 +76,10 @@ export function AchievementsSection() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground">
           Achievements
         </h2>
-        <div className="mt-1 h-px w-12 bg-primary" />
+        <div className="mt-2 h-px w-12 bg-primary" />
       </div>
 
       <div className="flex flex-col gap-6">
@@ -91,27 +91,27 @@ export function AchievementsSection() {
             transition={{ delay: 0.1 * gi, duration: 0.4, ease: "easeOut" }}
             className="flex flex-col gap-3"
           >
-            <div className="flex items-center gap-2">
-              <group.icon className="h-4 w-4 text-primary" />
-              <h3 className="font-mono text-xs uppercase tracking-widest text-primary">
+            <div className="flex items-center gap-3">
+              <group.icon className="h-5 w-5 text-primary" />
+              <h3 className="font-mono text-sm uppercase tracking-widest text-primary">
                 {group.category}
               </h3>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               {group.items.map((item) => (
                 <div
                   key={item.title}
-                  className="flex items-start justify-between gap-4 rounded-lg bg-card/50 px-4 py-3"
+                  className="flex items-start justify-between gap-4 rounded-lg bg-card/50 px-5 py-4"
                 >
-                  <div className="flex flex-col gap-0.5">
-                    <span className="text-sm font-medium text-foreground">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-base font-medium text-foreground">
                       {item.title}
                     </span>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-sm text-muted-foreground">
                       {item.detail}
                     </span>
                   </div>
-                  <span className="shrink-0 font-mono text-xs text-primary/60">
+                  <span className="shrink-0 font-mono text-sm text-primary/60">
                     {item.year}
                   </span>
                 </div>

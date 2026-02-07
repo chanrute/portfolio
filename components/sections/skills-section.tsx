@@ -66,10 +66,10 @@ export function SkillsSection() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground">
           Skills Matrix
         </h2>
-        <div className="mt-1 h-px w-12 bg-primary" />
+        <div className="mt-2 h-px w-12 bg-primary" />
       </div>
 
       <div className="flex flex-col gap-6">
@@ -88,17 +88,17 @@ export function SkillsSection() {
               {category.items.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex items-center justify-between gap-3 rounded-lg bg-card/50 px-4 py-2.5"
+                  className="flex items-center justify-between gap-4 rounded-lg bg-card/50 px-5 py-3"
                 >
-                  <span className="text-sm text-foreground">{skill.name}</span>
-                  <div className="flex items-center gap-2">
-                    <div className="h-1 w-16 overflow-hidden rounded-full bg-muted">
+                  <span className="text-base font-medium text-foreground">{skill.name}</span>
+                  <div className="flex items-center gap-3">
+                    <div className="h-2 w-20 overflow-hidden rounded-full bg-muted">
                       <div
                         className={`h-full rounded-full bg-primary transition-all ${levelWidths[skill.level]}`}
                       />
                     </div>
                     <span
-                      className={`shrink-0 rounded px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wide ${levelColors[skill.level]}`}
+                      className={`shrink-0 rounded px-2 py-1 font-mono text-xs uppercase tracking-wide ${levelColors[skill.level]}`}
                     >
                       {skill.level}
                     </span>

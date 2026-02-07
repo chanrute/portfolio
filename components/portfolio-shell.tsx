@@ -73,10 +73,10 @@ export function PortfolioShell() {
               />
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight text-foreground">
+              <h1 className="text-2xl font-bold tracking-tight text-foreground">
                 chanrute
               </h1>
-              <p className="font-mono text-xs text-muted-foreground">
+              <p className="font-mono text-sm text-muted-foreground">
                 Engineer & Creative
               </p>
             </div>
@@ -89,7 +89,7 @@ export function PortfolioShell() {
                 key={item.view}
                 type="button"
                 onClick={() => navigateTo(item.view)}
-                className={`flex items-center gap-3 rounded-lg px-3 py-2 text-left text-sm transition-colors ${
+                className={`flex items-center gap-3 rounded-lg px-3 py-2 text-left text-base transition-colors ${
                   activeView === item.view
                     ? "bg-primary/10 font-medium text-primary"
                     : "text-muted-foreground hover:bg-card/50 hover:text-foreground"
@@ -241,11 +241,11 @@ export function PortfolioShell() {
                   className="object-cover"
                 />
               </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
+              <div className="flex flex-col gap-3">
+                <h1 className="text-5xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
                   chanrute
                 </h1>
-                <p className="font-mono text-sm text-muted-foreground">
+                <p className="font-mono text-lg text-muted-foreground">
                   Engineer & Creative
                 </p>
               </div>

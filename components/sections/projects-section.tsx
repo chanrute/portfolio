@@ -46,10 +46,10 @@ export function ProjectsSection() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground">
           Projects
         </h2>
-        <div className="mt-1 h-px w-12 bg-primary" />
+        <div className="mt-2 h-px w-12 bg-primary" />
       </div>
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -63,21 +63,21 @@ export function ProjectsSection() {
           >
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="font-semibold text-foreground">
+                <h3 className="text-lg font-semibold text-foreground">
                   {project.name}
                 </h3>
-                <span className="font-mono text-xs text-primary/70">
+                <span className="font-mono text-sm text-primary/70">
                   {project.role}
                 </span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 {project.github && (
                   <a
                     href={project.github}
                     aria-label={`GitHub repository for ${project.name}`}
                     className="text-muted-foreground transition-colors hover:text-primary"
                   >
-                    <Github className="h-4 w-4" />
+                    <Github className="h-5 w-5" />
                   </a>
                 )}
                 {project.demo && (
@@ -86,19 +86,19 @@ export function ProjectsSection() {
                     aria-label={`Live demo of ${project.name}`}
                     className="text-muted-foreground transition-colors hover:text-primary"
                   >
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink className="h-5 w-5" />
                   </a>
                 )}
               </div>
             </div>
-            <p className="text-sm leading-relaxed text-muted-foreground">
+            <p className="text-base leading-relaxed text-muted-foreground">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="rounded bg-primary/10 px-2 py-0.5 font-mono text-xs text-primary"
+                  className="rounded bg-primary/10 px-3 py-1 font-mono text-sm text-primary"
                 >
                   {t}
                 </span>

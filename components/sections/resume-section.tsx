@@ -5,33 +5,33 @@ import { Download, FileText } from "lucide-react"
 
 const experience = [
   {
-    role: "Senior Full-Stack Engineer",
-    company: "TechNova Inc.",
+    role: "Web Developer",
+    company: "SmartRound",
     period: "2023 - Present",
     highlights: [
-      "Architected and led development of a real-time analytics platform serving 50K+ DAU",
-      "Reduced page load times by 60% through SSR optimization and edge caching",
-      "Mentored a team of 5 junior developers on React and TypeScript best practices",
+      "Full-stack development using Kotlin (Ktor) backend and TypeScript (Vue.js) frontend",
+      "Built LLM-integrated features and AWS cloud infrastructure",
+      "Developed Flutter mobile applications for cross-platform deployment",
     ],
   },
   {
-    role: "Software Engineer",
-    company: "CloudBridge Solutions",
-    period: "2021 - 2023",
+    role: "Developer Program Member",
+    company: "Community Developer",
+    period: "2022 - Present",
     highlights: [
-      "Built microservices architecture handling 10M+ API requests daily",
-      "Implemented CI/CD pipelines reducing deployment time from 2 hours to 15 minutes",
-      "Designed and deployed AWS infrastructure for multi-region availability",
+      "Active open-source contributor with projects on GitHub",
+      "Proficient in Kotlin, TypeScript, Python, and Ruby",
+      "Experience with AWS, LLM integration, and modern web frameworks",
     ],
   },
   {
-    role: "Frontend Developer",
-    company: "PixelForge Studio",
-    period: "2019 - 2021",
+    role: "Full-Stack Developer",
+    company: "Self-Directed Learning",
+    period: "2020 - 2023",
     highlights: [
-      "Developed responsive web applications for enterprise clients",
-      "Created a reusable component library adopted across 8 internal projects",
-      "Contributed to open-source tools with 2K+ GitHub stars",
+      "Mastered multiple technology stacks across backend and frontend",
+      "Built production-ready applications using Ktor, Vue.js, and Flask",
+      "Developed expertise in cloud deployment and infrastructure",
     ],
   },
 ]
@@ -41,14 +41,14 @@ export function ResumeSection() {
     <div className="flex flex-col gap-6">
       <div className="flex items-start justify-between">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground">
             Resume
           </h2>
-          <div className="mt-1 h-px w-12 bg-primary" />
+          <div className="mt-2 h-px w-12 bg-primary" />
         </div>
         <a
           href="#"
-          className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-base font-medium text-background transition-opacity hover:opacity-90"
         >
           <Download className="h-4 w-4" />
           Download PDF
@@ -69,26 +69,26 @@ export function ResumeSection() {
               className="rounded-lg bg-card/50 p-5"
             >
               <div className="flex items-start justify-between gap-4">
-                <div className="flex items-center gap-2">
-                  <FileText className="h-4 w-4 text-primary/50" />
+                <div className="flex items-center gap-3">
+                  <FileText className="h-5 w-5 text-primary/50" />
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground">
+                    <h4 className="text-lg font-semibold text-foreground">
                       {job.role}
                     </h4>
-                    <span className="font-mono text-xs text-primary/70">
+                    <span className="font-mono text-sm text-primary/70">
                       {job.company}
                     </span>
                   </div>
                 </div>
-                <span className="shrink-0 font-mono text-xs text-muted-foreground">
+                <span className="shrink-0 font-mono text-sm text-muted-foreground">
                   {job.period}
                 </span>
               </div>
-              <ul className="mt-3 flex flex-col gap-1.5 pl-6">
+              <ul className="mt-3 flex flex-col gap-2 pl-8">
                 {job.highlights.map((h) => (
                   <li
                     key={h}
-                    className="text-xs leading-relaxed text-muted-foreground before:mr-2 before:text-primary/40 before:content-['\2022']"
+                    className="text-base leading-relaxed text-muted-foreground before:mr-3 before:text-primary/40 before:content-['\2022']"
                   >
                     {h}
                   </li>
@@ -101,18 +101,23 @@ export function ResumeSection() {
 
       <div className="flex flex-col gap-3">
         <h3 className="font-mono text-xs uppercase tracking-widest text-primary">
-          Education
+          Skills & Tech Stack
         </h3>
-        <div className="rounded-lg bg-card/50 p-5">
-          <h4 className="text-sm font-semibold text-foreground">
-            B.Sc. Computer Science
+        <div className="rounded-lg bg-card/50 p-6">
+          <h4 className="text-lg font-semibold text-foreground">
+            Languages & Frameworks
           </h4>
-          <span className="font-mono text-xs text-primary/70">
-            Chulalongkorn University
-          </span>
-          <span className="ml-3 font-mono text-xs text-muted-foreground">
-            2015 - 2019
-          </span>
+          <p className="mt-3 text-base text-muted-foreground">
+            Kotlin (Ktor), TypeScript (Vue.js, Next.js), Python, Ruby, Flutter
+          </p>
+        </div>
+        <div className="rounded-lg bg-card/50 p-6">
+          <h4 className="text-lg font-semibold text-foreground">
+            Cloud & Tools
+          </h4>
+          <p className="mt-3 text-base text-muted-foreground">
+            AWS, LLM Integration, Docker, Git, CI/CD
+          </p>
         </div>
       </div>
     </div>

@@ -28,12 +28,12 @@ export function AboutSection() {
             </h2>
             <div className="mt-1 h-px w-12 bg-primary" />
           </div>
-          <p className="max-w-xl leading-relaxed text-muted-foreground">
+          <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
             I am a passionate full-stack engineer and creative technologist with a deep interest in building
             elegant, high-performance digital experiences. Currently focused on cloud-native architectures
             and modern frontend frameworks, I thrive at the intersection of design and engineering.
           </p>
-          <p className="max-w-xl leading-relaxed text-muted-foreground">
+          <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
             When I am not writing code, you can find me exploring new technologies, contributing to open-source
             projects, and sharing knowledge through technical writing and mentorship.
           </p>
@@ -56,11 +56,11 @@ export function AboutSection() {
               <h4 className="mb-3 font-mono text-xs uppercase tracking-wider text-primary/70">
                 {category}
               </h4>
-              <ul className="flex flex-col gap-1.5">
+              <ul className="flex flex-col gap-2">
                 {items.map((skill) => (
                   <li
                     key={skill}
-                    className="font-mono text-sm text-muted-foreground"
+                    className="font-mono text-base text-muted-foreground"
                   >
                     {skill}
                   </li>

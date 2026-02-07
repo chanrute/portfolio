@@ -14,12 +14,11 @@ import { BlogSection } from "@/components/sections/blog-section"
 import { SNSSection } from "@/components/sections/sns-section"
 import { ResumeSection } from "@/components/sections/resume-section"
 
-type View = "home" | "about" | "projects" | "skills" | "achievements" | "blog" | "sns" | "resume"
+type View = "home" | "about" | "projects" | "achievements" | "blog" | "sns" | "resume"
 
 const navItems: { label: string; view: View }[] = [
   { label: "About", view: "about" },
   { label: "Projects", view: "projects" },
-  { label: "Skills", view: "skills" },
   { label: "Achievements", view: "achievements" },
   { label: "Blog", view: "blog" },
   { label: "Connect", view: "sns" },
@@ -29,7 +28,6 @@ const navItems: { label: string; view: View }[] = [
 const viewComponents: Record<Exclude<View, "home">, React.ComponentType> = {
   about: AboutSection,
   projects: ProjectsSection,
-  skills: SkillsSection,
   achievements: AchievementsSection,
   blog: BlogSection,
   sns: SNSSection,
@@ -54,117 +52,44 @@ export function PortfolioShell() {
   const ActiveComponent = activeView !== "home" ? viewComponents[activeView] : null
 
   return (
-    <div className="flex h-screen w-full flex-col overflow-hidden bg-background md:flex-row" style={{
+    <div className="flex h-screen w-full flex-col overflow-hidden bg-background" style={{
       backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(239, 68, 68, 0.4), transparent 35%), radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.4), transparent 35%), linear-gradient(135deg, #1f0000 0%, #000000 40%, #000000 60%, #001f3f 100%)'
     }}>
-      {/* Sidebar - Desktop */}
-      <aside className="hidden w-64 shrink-0 flex-col justify-between border-r border-border/20 bg-black/20 backdrop-blur-sm p-8 md:flex lg:w-72">
-        <div className="flex flex-col gap-8">
-          {/* Identity */}
+      {/* Fixed Top Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-40 border-b border-border/20 bg-black/20 backdrop-blur-md">
+        <div className="mx-auto flex max-w-full items-center justify-center gap-8 px-4 py-4 md:gap-12 md:px-8 md:py-5">
           <button
             type="button"
             onClick={() => navigateTo("home")}
-            className="flex flex-col items-start gap-3 text-left"
+            className="flex items-center gap-2"
           >
-            <div className="relative h-16 w-16 overflow-hidden rounded-full border border-border/50">
-              <Image
-                src="/profile.jpg"
-                alt="chanrute profile"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight text-foreground">
-                chanrute
-              </h1>
-              <p className="font-mono text-sm text-muted-foreground">
-                Engineer & Creative
-              </p>
-            </div>
+            <span className="text-lg font-bold text-foreground">chanrute</span>
           </button>
-
-          {/* Navigation */}
-          <nav className="flex flex-col gap-1">
+          <nav className="hidden flex-wrap items-center justify-center gap-8 md:flex">
             {navItems.map((item) => (
               <button
                 key={item.view}
                 type="button"
                 onClick={() => navigateTo(item.view)}
-                className={`flex items-center gap-3 rounded-lg px-3 py-2 text-left text-base transition-colors ${
+                className={`font-mono text-lg transition-colors ${
                   activeView === item.view
-                    ? "bg-primary/10 font-medium text-primary"
-                    : "text-muted-foreground hover:bg-card/50 hover:text-foreground"
+                    ? "font-medium text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                <span
-                  className={`h-px transition-all ${
-                    activeView === item.view ? "w-4 bg-primary" : "w-2 bg-muted-foreground/30"
-                  }`}
-                />
                 {item.label}
               </button>
             ))}
           </nav>
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            className="rounded-lg p-1.5 text-muted-foreground transition-colors hover:text-foreground md:hidden"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
-
-        {/* Social links */}
-        <div className="flex items-center gap-3">
-          <a
-            href="https://github.com/chanrute"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-muted-foreground transition-colors hover:text-primary"
-          >
-            <Github className="h-4 w-4" />
-          </a>
-          <a
-            href="https://linkedin.com/in/chanrute"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="text-muted-foreground transition-colors hover:text-primary"
-          >
-            <Linkedin className="h-4 w-4" />
-          </a>
-          <a
-            href="https://twitter.com/chanrute"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            className="text-muted-foreground transition-colors hover:text-primary"
-          >
-            <Twitter className="h-4 w-4" />
-          </a>
-        </div>
-      </aside>
-
-      {/* Mobile Header */}
-      <header className="flex items-center justify-between border-b border-border/20 bg-black/20 backdrop-blur-sm p-4 md:hidden">
-        <button
-          type="button"
-          onClick={() => navigateTo("home")}
-          className="flex items-center gap-2"
-        >
-          <div className="relative h-8 w-8 overflow-hidden rounded-full border border-border/50">
-            <Image
-              src="/profile.jpg"
-              alt="chanrute profile"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <span className="text-sm font-bold text-foreground">chanrute</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          className="rounded-lg p-1.5 text-muted-foreground transition-colors hover:text-foreground"
-        >
-          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
       </header>
 
       {/* Mobile Menu Overlay */}
@@ -175,19 +100,8 @@ export function PortfolioShell() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-sm md:hidden pt-20"
           >
-            <div className="flex items-center justify-between border-b border-border/20 p-4">
-              <span className="text-sm font-bold text-foreground">chanrute</span>
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                aria-label="Close menu"
-                className="rounded-lg p-1.5 text-muted-foreground"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
             <nav className="flex flex-1 flex-col gap-1 p-6">
               {navItems.map((item, i) => (
                 <motion.button
@@ -223,7 +137,7 @@ export function PortfolioShell() {
       </AnimatePresence>
 
       {/* Main Display Area */}
-      <main className="flex flex-1 items-center justify-center overflow-hidden p-4 md:p-8">
+      <main className="flex flex-1 items-center justify-center overflow-hidden p-4 md:p-8 pt-24 md:pt-20">
         <AnimatePresence mode="wait">
           {activeView === "home" ? (
             <motion.div
@@ -251,18 +165,7 @@ export function PortfolioShell() {
                   Engineer & Creative
                 </p>
               </div>
-              <div className="mt-2 hidden flex-wrap justify-center gap-2 md:flex">
-                {navItems.map((item) => (
-                  <button
-                    key={item.view}
-                    type="button"
-                    onClick={() => navigateTo(item.view)}
-                    className="rounded-lg border border-border/50 px-4 py-2 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
+
             </motion.div>
           ) : (
             <motion.div

@@ -4,7 +4,7 @@ import React from "react"
 
 import { useState, useCallback } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { Menu, X, Github, Linkedin, Twitter } from "lucide-react"
+import { Menu, X, Github, Linkedin, Twitter, Languages } from "lucide-react"
 import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { AboutSection } from "@/components/sections/about-section"
@@ -87,9 +87,10 @@ export function PortfolioShell() {
             <button
               type="button"
               onClick={() => setLanguage(language === "en" ? "ja" : "en")}
-              className="rounded-lg px-3 py-1.5 text-sm font-mono text-muted-foreground transition-colors hover:text-primary"
+              aria-label={language === "en" ? "Switch to Japanese" : "Switch to English"}
+              className="rounded-lg p-1.5 text-muted-foreground transition-colors hover:text-primary"
             >
-              {language === "en" ? "ja" : "en"}
+              <Languages className="h-5 w-5" />
             </button>
             <button
               type="button"

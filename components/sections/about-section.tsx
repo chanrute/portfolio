@@ -5,9 +5,9 @@ import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 
 const skillsData = {
-  "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"],
-  "Backend": ["Node.js", "Python", "Go", "REST APIs", "GraphQL"],
-  "Cloud & DevOps": ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"],
+  "Backend": ["Kotlin", "Python", "Ruby", "Node.js"],
+  "Front/Mobile/Infra": ["TypeScript (Vue)", "Flutter", "AWS", "Docker"],
+  "Other": ["Recruiting", "Management", "DevRel"],
 }
 
 export function AboutSection() {
@@ -30,49 +30,49 @@ export function AboutSection() {
             </h2>
             <div className="mt-1 h-px w-12 bg-primary" />
           </div>
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
             {t.about.description1}
           </p>
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
             {t.about.description2}
           </p>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h3 className="font-mono text-xs uppercase tracking-widest text-primary">
+        <h3 className="font-mono text-sm uppercase tracking-widest text-primary">
           {t.about.coretech}
         </h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {Object.entries(skillsData).map(([category, items], i) => {
-            const translatedCategory = category === "Frontend" ? t.about.frontend : 
-                                      category === "Backend" ? t.about.backend : 
-                                      t.about.devops
+            const translatedCategory = category === "Backend" ? t.about.backend :
+              category === "Front/Mobile/Infra" ? t.about.frontendMobileInfra :
+                t.about.other
             return (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i, duration: 0.4, ease: "easeOut" }}
-              className="rounded-lg bg-card/50 p-4"
-            >
-              <h4 className="mb-3 font-mono text-xs uppercase tracking-wider text-primary/70">
-                {translatedCategory}
-              </h4>
-              <ul className="flex flex-col gap-2">
-                {items.map((skill) => (
-                  <li
-                    key={skill}
-                    className="font-mono text-base text-muted-foreground"
-                  >
-                    {skill}
-                  </li>
-                ))}
-              </ul>
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * i, duration: 0.4, ease: "easeOut" }}
+                className="rounded-lg bg-card/50 p-4"
+              >
+                <h4 className="mb-3 font-mono text-sm uppercase tracking-wider text-primary/70">
+                  {translatedCategory}
+                </h4>
+                <ul className="flex flex-col gap-2">
+                  {items.map((skill) => (
+                    <li
+                      key={skill}
+                      className="font-mono text-lg text-muted-foreground"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             )
           })}
-          </div>
+        </div>
       </div>
     </div>
   )

@@ -4,41 +4,10 @@ import { motion } from "framer-motion"
 import { Download, FileText } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
-const experience = [
-  {
-    role: "Web Developer",
-    company: "SmartRound",
-    period: "2023 - Present",
-    highlights: [
-      "Full-stack development using Kotlin (Ktor) backend and TypeScript (Vue.js) frontend",
-      "Built LLM-integrated features and AWS cloud infrastructure",
-      "Developed Flutter mobile applications for cross-platform deployment",
-    ],
-  },
-  {
-    role: "Developer Program Member",
-    company: "Community Developer",
-    period: "2022 - Present",
-    highlights: [
-      "Active open-source contributor with projects on GitHub",
-      "Proficient in Kotlin, TypeScript, Python, and Ruby",
-      "Experience with AWS, LLM integration, and modern web frameworks",
-    ],
-  },
-  {
-    role: "Full-Stack Developer",
-    company: "Self-Directed Learning",
-    period: "2020 - 2023",
-    highlights: [
-      "Mastered multiple technology stacks across backend and frontend",
-      "Built production-ready applications using Ktor, Vue.js, and Flask",
-      "Developed expertise in cloud deployment and infrastructure",
-    ],
-  },
-]
-
 export function ResumeSection() {
   const { t } = useLanguage()
+  const experience = t.resume.experience
+  const education = t.resume.educationList
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-start justify-between">
@@ -59,7 +28,7 @@ export function ResumeSection() {
 
       <div className="flex flex-col gap-4">
         <h3 className="font-mono text-xs uppercase tracking-widest text-primary">
-          Experience
+          {t.resume.career}
         </h3>
         <div className="flex flex-col gap-4">
           {experience.map((job, i) => (
@@ -101,25 +70,47 @@ export function ResumeSection() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <h3 className="font-mono text-xs uppercase tracking-widest text-primary">
-          Skills & Tech Stack
+          {t.resume.education}
         </h3>
-        <div className="rounded-lg bg-card/50 p-6">
-          <h4 className="text-lg font-semibold text-foreground">
-            {t.resume.languages}
-          </h4>
-          <p className="mt-3 text-base text-muted-foreground">
-            Kotlin (Ktor), TypeScript (Vue.js, Next.js), Python, Ruby, Flutter
-          </p>
-        </div>
-        <div className="rounded-lg bg-card/50 p-6">
-          <h4 className="text-lg font-semibold text-foreground">
-            {t.resume.cloud}
-          </h4>
-          <p className="mt-3 text-base text-muted-foreground">
-            AWS, LLM Integration, Docker, Git, CI/CD
-          </p>
+        <div className="flex flex-col gap-4">
+          {education.map((edu, i) => (
+            <motion.div
+              key={edu.degree}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * (i + 3), duration: 0.4, ease: "easeOut" }}
+              className="rounded-lg bg-card/50 p-5"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <FileText className="h-5 w-5 text-primary/50" />
+                  <div>
+                    <h4 className="text-lg font-semibold text-foreground">
+                      {edu.degree}
+                    </h4>
+                    <span className="font-mono text-sm text-primary/70">
+                      {edu.department}
+                    </span>
+                  </div>
+                </div>
+                <span className="shrink-0 font-mono text-sm text-muted-foreground">
+                  {edu.period}
+                </span>
+              </div>
+              <ul className="mt-3 flex flex-col gap-2 pl-8">
+                {edu.highlights.map((h) => (
+                  <li
+                    key={h}
+                    className="text-base leading-relaxed text-muted-foreground before:mr-3 before:text-primary/40 before:content-['\2022']"
+                  >
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

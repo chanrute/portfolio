@@ -8,8 +8,8 @@ const _inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const _jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono' })
 
 export const metadata: Metadata = {
-  title: 'chanrute | Portfolio',
-  description: 'Professional portfolio of chanrute - Engineer & Creative',
+  title: 'Teruhisa Fukumoto | Portfolio',
+  description: 'Portfolio of Teruhisa Fukumoto - Web/LLM Developer',
 }
 
 export const viewport: Viewport = {

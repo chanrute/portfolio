@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Twitter, ExternalLink } from "lucide-react"
+import { Github, Linkedin, Twitter, ExternalLink, Facebook, Instagram, BookOpen, FileText, Presentation, Book, Film, MessageCircle } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 const links = [
@@ -13,6 +13,55 @@ const links = [
     description: "Open source projects and contributions",
   },
   {
+    name: "X (Twitter)",
+    handle: "@terry_i_",
+    url: "https://x.com/terry_i_",
+    icon: Twitter,
+    description: "Tech insights and industry commentary",
+  },
+  {
+    name: "Blog (Medium)",
+    handle: "@chanrute",
+    url: "https://medium.com/@chanrute",
+    icon: BookOpen,
+    description: "Technical articles and blog posts",
+  },
+  {
+    name: "Zenn",
+    handle: "@t_fukumoto",
+    url: "https://zenn.dev/t_fukumoto",
+    icon: FileText,
+    description: "Technical articles in Japanese",
+  },
+  {
+    name: "SpeakerDeck",
+    handle: "@chanrute",
+    url: "https://speakerdeck.com/chanrute",
+    icon: Presentation,
+    description: "Conference slides and presentations",
+  },
+  {
+    name: "Qiita",
+    handle: "@chanrute",
+    url: "https://qiita.com/chanrute",
+    icon: FileText,
+    description: "Programming tips and articles",
+  },
+  {
+    name: "Bookmeter",
+    handle: "Reading Log",
+    url: "https://bookmeter.com/users/629901",
+    icon: Book,
+    description: "Book reviews and reading history",
+  },
+  {
+    name: "Filmarks",
+    handle: "Movie Log",
+    url: "https://filmarks.com/users/teruid",
+    icon: Film,
+    description: "Movie reviews and watchlist",
+  },
+  {
     name: "LinkedIn",
     handle: "chanrute",
     url: "https://linkedin.com/in/chanrute",
@@ -20,11 +69,25 @@ const links = [
     description: "Professional network and career updates",
   },
   {
-    name: "Twitter / X",
-    handle: "@chanrute",
-    url: "https://twitter.com/chanrute",
-    icon: Twitter,
-    description: "Tech insights and industry commentary",
+    name: "Facebook",
+    handle: "Teruhisa Fukumoto",
+    url: "https://www.facebook.com/teruhisa.fukumoto",
+    icon: Facebook,
+    description: "Personal updates and connections",
+  },
+  {
+    name: "Instagram",
+    handle: "@chanrute0324",
+    url: "https://instagram.com/chanrute0324",
+    icon: Instagram,
+    description: "Photos and daily moments",
+  },
+  {
+    name: "Threads",
+    handle: "@chanrute0324",
+    url: "https://www.threads.com/chanrute0324",
+    icon: MessageCircle,
+    description: "Casual conversations and thoughts",
   },
 ]
 

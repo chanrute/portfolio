@@ -9,7 +9,6 @@ import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { AboutSection } from "@/components/sections/about-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
-import { SkillsSection } from "@/components/sections/skills-section"
 import { AchievementsSection } from "@/components/sections/achievements-section"
 import { BlogSection } from "@/components/sections/blog-section"
 import { SNSSection } from "@/components/sections/sns-section"
@@ -39,11 +38,11 @@ export function PortfolioShell() {
 
   const navItems = [
     { label: t.nav.about, view: "about" as const },
-    { label: t.nav.projects, view: "projects" as const },
-    { label: t.nav.achievements, view: "achievements" as const },
-    { label: t.nav.blog, view: "blog" as const },
-    { label: t.nav.connect, view: "sns" as const },
     { label: t.nav.resume, view: "resume" as const },
+    { label: t.nav.blog, view: "blog" as const },
+    { label: t.nav.social, view: "sns" as const },
+    { label: t.nav.achievements, view: "achievements" as const },
+    { label: t.nav.projects, view: "projects" as const },
   ]
 
   const navigateTo = useCallback((view: View) => {
@@ -65,6 +64,14 @@ export function PortfolioShell() {
             onClick={() => navigateTo("home")}
             className="flex items-center gap-2"
           >
+            <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-primary/20">
+              <Image
+                src="/profile.jpg"
+                alt="chanrute profile"
+                fill
+                className="object-cover"
+              />
+            </div>
             <span className="text-lg font-bold text-foreground">chanrute</span>
           </button>
           <nav className="hidden flex-wrap items-center justify-center gap-8 md:flex">
@@ -73,11 +80,10 @@ export function PortfolioShell() {
                 key={item.view}
                 type="button"
                 onClick={() => navigateTo(item.view)}
-                className={`font-mono text-lg transition-colors ${
-                  activeView === item.view
+                className={`font-mono text-xl transition-colors ${activeView === item.view
                     ? "font-medium text-primary"
                     : "text-muted-foreground hover:text-foreground"
-                }`}
+                  }`}
               >
                 {item.label}
               </button>
@@ -123,11 +129,10 @@ export function PortfolioShell() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * i, duration: 0.3 }}
                   onClick={() => navigateTo(item.view)}
-                  className={`rounded-lg px-4 py-3 text-left text-lg transition-colors ${
-                    activeView === item.view
+                  className={`rounded-lg px-4 py-3 text-left text-xl transition-colors ${activeView === item.view
                       ? "font-medium text-primary"
                       : "text-muted-foreground"
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </motion.button>
@@ -158,7 +163,7 @@ export function PortfolioShell() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="flex flex-col items-center gap-6 text-center"
             >
               <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-primary/20 md:h-32 md:w-32">
@@ -171,9 +176,9 @@ export function PortfolioShell() {
               </div>
               <div className="flex flex-col gap-3">
                 <h1 className="text-5xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
-                  chanrute
+                  Teruhisa Fukumoto
                 </h1>
-                <p className="font-mono text-lg text-muted-foreground">
+                <p className="font-mono text-xl text-muted-foreground">
                   {t.home.tagline}
                 </p>
               </div>
@@ -186,7 +191,7 @@ export function PortfolioShell() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="h-full w-full max-w-3xl overflow-y-auto rounded-xl bg-black/30 backdrop-blur-md border border-white/10 p-6 md:p-8"
             >
               {ActiveComponent && <ActiveComponent />}

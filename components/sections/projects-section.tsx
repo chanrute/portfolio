@@ -4,47 +4,9 @@ import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
-const projects = [
-  {
-    name: "CloudSync Dashboard",
-    description:
-      "Real-time cloud infrastructure monitoring platform with automated alerting and cost optimization insights.",
-    tech: ["React", "TypeScript", "AWS", "GraphQL", "Docker"],
-    role: "Lead Developer",
-    github: "#",
-    demo: "#",
-  },
-  {
-    name: "DevFlow CLI",
-    description:
-      "A developer productivity CLI tool that automates repetitive workflows, from scaffolding to deployment pipelines.",
-    tech: ["Go", "Cobra", "Docker", "CI/CD"],
-    role: "Creator & Maintainer",
-    github: "#",
-    demo: null,
-  },
-  {
-    name: "PixelCraft Studio",
-    description:
-      "Browser-based collaborative design tool with real-time multiplayer editing and version control for assets.",
-    tech: ["Next.js", "WebSocket", "PostgreSQL", "Tailwind CSS"],
-    role: "Full-stack Developer",
-    github: "#",
-    demo: "#",
-  },
-  {
-    name: "Neural Notes",
-    description:
-      "AI-powered note-taking application with smart tagging, semantic search, and automatic summarization.",
-    tech: ["Python", "FastAPI", "React", "OpenAI", "Redis"],
-    role: "Backend Architect",
-    github: "#",
-    demo: "#",
-  },
-]
-
 export function ProjectsSection() {
   const { t } = useLanguage()
+  const projects = t.projects.list
   return (
     <div className="flex flex-col gap-6">
       <div>
@@ -64,14 +26,9 @@ export function ProjectsSection() {
             className="group flex flex-col gap-3 rounded-lg bg-card/50 p-5 transition-colors hover:bg-card"
           >
             <div className="flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {project.name}
-                </h3>
-                <span className="font-mono text-sm text-primary/70">
-                  {project.role}
-                </span>
-              </div>
+              <h3 className="text-lg font-semibold text-foreground">
+                {project.name}
+              </h3>
               <div className="flex items-center gap-3">
                 {project.github && (
                   <a

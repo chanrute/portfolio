@@ -80,9 +80,9 @@ export function PortfolioShell() {
                 key={item.view}
                 type="button"
                 onClick={() => navigateTo(item.view)}
-                className={`font-mono text-xl transition-colors ${activeView === item.view
-                    ? "font-medium text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                className={`font-mono text-2xl transition-colors ${activeView === item.view
+                  ? "font-medium text-primary"
+                  : "text-muted-foreground hover:text-foreground"
                   }`}
               >
                 {item.label}
@@ -129,9 +129,9 @@ export function PortfolioShell() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * i, duration: 0.3 }}
                   onClick={() => navigateTo(item.view)}
-                  className={`rounded-lg px-4 py-3 text-left text-xl transition-colors ${activeView === item.view
-                      ? "font-medium text-primary"
-                      : "text-muted-foreground"
+                  className={`rounded-lg px-4 py-3 text-left text-2xl transition-colors ${activeView === item.view
+                    ? "font-medium text-primary"
+                    : "text-muted-foreground"
                     }`}
                 >
                   {item.label}
@@ -154,7 +154,7 @@ export function PortfolioShell() {
       </AnimatePresence>
 
       {/* Main Display Area */}
-      <main className="flex flex-1 items-center justify-center overflow-hidden p-4 md:p-8 pt-24 md:pt-20">
+      <main className="flex flex-1 items-center justify-center overflow-hidden p-4 md:p-8 pt-24 md:pt-28">
         <AnimatePresence mode="wait">
           {activeView === "home" ? (
             <motion.div
@@ -178,7 +178,7 @@ export function PortfolioShell() {
                 <h1 className="text-5xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
                   Teruhisa Fukumoto
                 </h1>
-                <p className="font-mono text-xl text-muted-foreground">
+                <p className="font-mono text-2xl text-muted-foreground">
                   {t.home.tagline}
                 </p>
               </div>

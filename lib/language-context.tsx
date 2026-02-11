@@ -170,7 +170,7 @@ const translations = {
       role: "役割",
       list: [
         {
-          name: "ポートフォリオサイト",
+          name: "本ポートフォリオサイト",
           description: "v0を用いたReact/Next.jsにより作成し、Vercelへホスティングしている。",
           tech: ["v0", "React", "Next.js", "Vercel"],
           role: "作成者",

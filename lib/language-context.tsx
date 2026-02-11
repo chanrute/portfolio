@@ -76,7 +76,6 @@ const translations = {
     },
     resume: {
       title: "Resume",
-      download: "Download PDF",
       career: "Career",
       education: "Education",
       languages: "Languages & Frameworks",
@@ -114,7 +113,7 @@ const translations = {
         },
         {
           role: "Solution Accountant",
-          company: "Fujitsu Marketing Ltd. (now merged into Fujitsu Japan)",
+          company: "Fujitsu Marketing Ltd. (Merged into Fujitsu Japan)",
           period: "2015 - 2018",
           highlights: [
             "Project management for ERP system implementation and replacement for SMEs",
@@ -213,7 +212,6 @@ const translations = {
     },
     resume: {
       title: "経歴",
-      download: "PDF をダウンロード",
       career: "経歴",
       education: "学歴",
       languages: "言語 & フレームワーク",
@@ -224,7 +222,7 @@ const translations = {
           company: "株式会社SmartRound",
           period: "2023 - 現在",
           highlights: [
-            "Kotlin(Ktor), TypeScript(Vue.js)を用いたフルサイクルでのWebサービスの開発",
+            "Kotlin(Ktor), TypeScript(Vue.js)を用いたWebのSaaS開発",
             "Flutterを用いたモバイルアプリの開発",
             "LangChain, Mastraを用いたLLMアプリケーションの開発",
           ],
@@ -234,8 +232,8 @@ const translations = {
           company: "メドピア株式会社",
           period: "2020 - 2023",
           highlights: [
-            "Ruby on Railsを用いたWeb API/管理画面の機能開発および運用保守",
-            "Ruby on Railsを用いたtoC向けスマホアプリのAPI/管理画面 機能の開発および運用保守",
+            "Ruby on Railsを用いたWeb API/管理画面の機能開発",
+            "Ruby on Railsを用いたtoC向けスマホアプリのAPI/管理画面 機能開発",
             "社内gem(Rails Engine)を用いたライブラリの開発・メンテナンス",
           ],
         },
@@ -251,7 +249,7 @@ const translations = {
         },
         {
           role: "Solution Accountant",
-          company: "株式会社富士通マーケティング(現: 富士通Japanへ統合)",
+          company: "㈱富士通マーケティング(現: 富士通Japan㈱)",
           period: "2015 - 2018",
           highlights: [
             "中小企業のERPシステムの導入・リプレースのプロジェクト推進",

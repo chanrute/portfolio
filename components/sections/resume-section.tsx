@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Download, FileText } from "lucide-react"
+import { FileText } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export function ResumeSection() {
@@ -10,20 +10,11 @@ export function ResumeSection() {
   const education = t.resume.educationList
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-start justify-between">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">
-            {t.resume.title}
-          </h2>
-          <div className="mt-2 h-px w-12 bg-primary" />
-        </div>
-        <a
-          href="#"
-          className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-base font-medium text-background transition-opacity hover:opacity-90"
-        >
-          <Download className="h-4 w-4" />
-          {t.resume.download}
-        </a>
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight text-foreground">
+          {t.resume.title}
+        </h2>
+        <div className="mt-2 h-px w-12 bg-primary" />
       </div>
 
       <div className="flex flex-col gap-4">

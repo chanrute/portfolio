@@ -33,6 +33,8 @@ export function ProjectsSection() {
                 {project.github && (
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={`GitHub repository for ${project.name}`}
                     className="text-muted-foreground transition-colors hover:text-primary"
                   >
@@ -42,6 +44,8 @@ export function ProjectsSection() {
                 {project.demo && (
                   <a
                     href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={`Live demo of ${project.name}`}
                     className="text-muted-foreground transition-colors hover:text-primary"
                   >

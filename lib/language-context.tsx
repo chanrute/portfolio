@@ -37,8 +37,8 @@ const translations = {
           description: "Created with React/Next.js using v0 and hosted on Vercel.",
           tech: ["v0", "React", "Next.js", "Vercel"],
           role: "Creator",
-          github: null,
-          demo: null,
+          github: "https://github.com/chanrute/portfolio",
+          demo: "https://www.teruhisafukumoto.com/",
         },
         {
           name: "Koog Sample",
@@ -174,8 +174,8 @@ const translations = {
           description: "v0を用いたReact/Next.jsにより作成し、Vercelへホスティングしている。",
           tech: ["v0", "React", "Next.js", "Vercel"],
           role: "作成者",
-          github: null,
-          demo: null,
+          github: "https://github.com/chanrute/portfolio",
+          demo: "https://www.teruhisafukumoto.com/",
         },
         {
           name: "Koog Sample",

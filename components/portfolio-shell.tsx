@@ -120,6 +120,14 @@ export function PortfolioShell() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-sm md:hidden pt-20"
           >
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+              className="absolute top-5 right-4 rounded-lg p-1.5 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <X className="h-6 w-6" />
+            </button>
             <nav className="flex flex-1 flex-col gap-1 p-6">
               {navItems.map((item, i) => (
                 <motion.button
@@ -164,7 +172,8 @@ export function PortfolioShell() {
               animate="visible"
               exit="exit"
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="flex flex-col items-center gap-6 text-center"
+              className="flex flex-col items-center gap-6 text-center cursor-pointer md:cursor-default"
+              onClick={() => { if (window.innerWidth < 768) setMobileMenuOpen(true) }}
             >
               <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-primary/20 md:h-32 md:w-32">
                 <Image

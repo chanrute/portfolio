@@ -151,14 +151,14 @@ const translations = {
       resume: "経歴",
     },
     home: {
-      tagline: "エンジニア & クリエイティブ",
+      tagline: "Web/LLM エンジニア",
     },
     about: {
       title: "自己紹介",
       description1:
         "WebとLLMのプログラマーです。特定の領域に尖っているというよりは、プロダクトや事業への志向を強く持って、必要なことであればマルチに動くことが強みです。",
       description2:
-        "バックエンドからフロントエンドまで一気通貫したフルサイクル開発を行っており、特にバックエンド開発では長い経験と自信を持っています。また、LLMのAPIやLangChain/Mastraなどを活用したAgent/Workflowの開発にも積極的に取り組んでいます。AWSやFlutterを使ったアプリ開発など、プロダクトのニーズに応じて幅広い技術スタックに対応してきました。",
+        "バックエンドからフロントエンドまで一気通貫したフルサイクル開発を行ってきました。主にはバックエンドの開発が長いです。また、LLMのAPIやLangChain/Mastraを活用したAI Agent/Workflowの開発も行っています。他にはAWSやFlutterを使ったアプリ開発など、プロダクトのニーズに応じて幅広い技術スタックに対応してきました。",
       coretech: "Core Technologies",
       backend: "Backend",
       frontendMobileInfra: "Frontend/Mobile/Infra",

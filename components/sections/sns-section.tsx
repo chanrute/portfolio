@@ -14,8 +14,8 @@ const links = [
   },
   {
     name: "X (Twitter)",
-    handle: "@terry_i_",
-    url: "https://x.com/terry_i_",
+    handle: "@chanrute",
+    url: "https://x.com/chanrute",
     icon: Twitter,
     description: "Tech insights and industry commentary",
   },

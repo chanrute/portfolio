@@ -7,6 +7,19 @@ import { useLanguage } from "@/lib/language-context"
 const posts = [
   {
     title: {
+      en: "Organizing Large File Uploads with MCP (w/ Claude Desktop, Code)",
+      ja: "MCPでの大容量ファイルアップロードに関する整理（w/Claude Desktop, Code）"
+    },
+    excerpt: {
+      en: "Investigating issues with large file uploads via MCP: base64 encoding constraints and context window limitations as root causes.",
+      ja: "MCPを通じた大容量ファイルアップロードの問題を調査。base64エンコードの制約とコンテキストウィンドウの上限が根本原因であることを解説。"
+    },
+    date: "2026/03",
+    tag: "AI/LLM",
+    url: "https://zenn.dev/smartround_dev/articles/5162252028b876",
+  },
+  {
+    title: {
       en: "Using Google Vertex AI (Gemini) Context Cache with Vercel AI SDK",
       ja: "Vercel AI SDKでGoogle Vertex AI(Gemini)のコンテキストキャッシュを使う"
     },
@@ -56,19 +69,6 @@ const posts = [
     date: "2024/07",
     tag: "Flutter/iOS",
     url: "https://zenn.dev/smartround_dev/articles/d2027d3e19f2db",
-  },
-  {
-    title: {
-      en: "Serving Asset Files with CloudFront + S3 Using asset_sync",
-      ja: "asset_syncを使ってCloud Front + S3でassetファイルを配信する"
-    },
-    excerpt: {
-      en: "Reducing ECS container image size by offloading asset delivery to CloudFront and S3.",
-      ja: "アセットファイルの配信をCloudFront + S3にオフロードしてECSコンテナイメージサイズを削減。"
-    },
-    date: "2022/11",
-    tag: "Rails/AWS",
-    url: "https://zenn.dev/t_fukumoto/articles/bf56daeaf616c4",
   },
 ]
 

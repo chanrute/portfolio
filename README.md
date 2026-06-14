@@ -48,6 +48,7 @@ portfolio/
 - Framer Motion
 - React Hook Form / Zod
 - Google Analytics（`@next/third-parties`）
+- [Glassmorphism Liquid Glass UI kit](https://codepen.io/Margarita-the-solid/pen/NPRPBjd)
 
 # 環境構築
 

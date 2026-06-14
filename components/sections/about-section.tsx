@@ -28,7 +28,7 @@ export function AboutSection() {
             <h2 className="text-2xl font-bold tracking-tight text-foreground">
               {t.about.title}
             </h2>
-            <div className="mt-1 h-px w-12 bg-primary" />
+            <div className="mt-1 lg-accent-line w-12" />
           </div>
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
             {t.about.description1}
@@ -40,7 +40,7 @@ export function AboutSection() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h3 className="font-mono text-sm uppercase tracking-widest text-primary">
+        <h3 className="text-sm font-bold uppercase tracking-widest lg-accent">
           {t.about.coretech}
         </h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -54,16 +54,16 @@ export function AboutSection() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i, duration: 0.4, ease: "easeOut" }}
-                className="rounded-lg bg-card/50 p-4"
+                className="lg lg-sm lg-dark lg-shadow-sm lg-card-hover p-4"
               >
-                <h4 className="mb-3 font-mono text-sm uppercase tracking-wider text-primary/70">
+                <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider lg-accent-muted">
                   {translatedCategory}
                 </h4>
                 <ul className="flex flex-col gap-2">
                   {items.map((skill) => (
                     <li
                       key={skill}
-                      className="font-mono text-lg text-muted-foreground"
+                      className="text-lg text-muted-foreground"
                     >
                       {skill}
                     </li>

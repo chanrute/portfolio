@@ -161,7 +161,7 @@ const translations = {
         "バックエンドからフロントエンドまで一気通貫したフルサイクル開発を行ってきました。主にはバックエンドの開発が長いです。また、LLMのAPIやLangChain/Mastraを活用したAI Agent/Workflowの開発も行っています。他にはAWSやFlutterを使ったアプリ開発など、プロダクトのニーズに応じて幅広い技術スタックに対応してきました。",
       coretech: "Core Technologies",
       backend: "Backend",
-      frontendMobileInfra: "Frontend/Mobile/Infra",
+      frontendMobileInfra: "Front/Mobile/Infra",
       other: "Other",
     },
     projects: {
@@ -212,14 +212,14 @@ const translations = {
     },
     resume: {
       title: "経歴",
-      career: "経歴",
+      career: "職歴",
       education: "学歴",
       languages: "言語 & フレームワーク",
       cloud: "クラウド & ツール",
       experience: [
         {
           role: "Web/AI Developer",
-          company: "株式会社SmartRound",
+          company: "株式会社Smartround",
           period: "2023 - 現在",
           highlights: [
             "Kotlin(Ktor), TypeScript(Vue.js)を用いたWebのSaaS開発",

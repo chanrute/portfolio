@@ -70,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${_inter.variable} ${_jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -78,6 +78,37 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        {/* SVG filter for Liquid Glass distortion / refraction effect */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}
+        >
+          <defs>
+            <filter
+              id="lg-distort"
+              x="-10%"
+              y="-10%"
+              width="120%"
+              height="120%"
+              colorInterpolationFilters="sRGB"
+            >
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.65 0.75"
+                numOctaves="2"
+                result="noise"
+              />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="6"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </defs>
+        </svg>
         {children}
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />

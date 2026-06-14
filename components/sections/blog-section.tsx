@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
+import { DynamicTag } from "@/components/ui/dynamic-tag"
 import { useLanguage } from "@/lib/language-context"
 
 const posts = [
@@ -80,7 +81,7 @@ export function BlogSection() {
         <h2 className="text-3xl font-bold tracking-tight text-foreground">
           {t.blog.title}
         </h2>
-        <div className="mt-2 h-px w-12 bg-primary" />
+        <div className="mt-2 lg-accent-line w-12" />
       </div>
 
       <div className="flex flex-col gap-2">
@@ -93,14 +94,14 @@ export function BlogSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.06 * i, duration: 0.4, ease: "easeOut" }}
-            className="group flex items-start justify-between gap-4 rounded-lg px-5 py-4 transition-colors hover:bg-card/50"
+            className="group flex items-start justify-between gap-4 lg lg-sm lg-dark lg-shadow-sm lg-card-hover rounded-2xl px-5 py-4 transition-all"
           >
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-medium text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-medium text-foreground group-hover:font-bold group-hover:text-primary transition-colors">
                   {post.title[language]}
                 </h3>
-                <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-hover:text-primary" strokeWidth={2.5} />
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {post.excerpt[language]}
@@ -110,9 +111,7 @@ export function BlogSection() {
               <span className="font-mono text-sm text-muted-foreground">
                 {post.date}
               </span>
-              <span className="rounded bg-primary/10 px-2 py-1 font-mono text-xs text-primary">
-                {post.tag}
-              </span>
+              <DynamicTag label={post.tag} />
             </div>
           </motion.a>
         ))}

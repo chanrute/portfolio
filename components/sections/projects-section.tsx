@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
+import { DynamicTag } from "@/components/ui/dynamic-tag"
 import { useLanguage } from "@/lib/language-context"
 
 export function ProjectsSection() {
@@ -13,7 +14,7 @@ export function ProjectsSection() {
         <h2 className="text-3xl font-bold tracking-tight text-foreground">
           {t.projects.title}
         </h2>
-        <div className="mt-2 h-px w-12 bg-primary" />
+        <div className="mt-2 lg-accent-line w-12" />
       </div>
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -23,7 +24,7 @@ export function ProjectsSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.08 * i, duration: 0.4, ease: "easeOut" }}
-            className="group flex flex-col gap-3 rounded-lg bg-card/50 p-5 transition-colors hover:bg-card"
+            className="group flex flex-col gap-3 lg lg-sm lg-dark lg-shadow-sm lg-card-hover p-5 transition-all"
           >
             <div className="flex items-start justify-between">
               <h3 className="text-lg font-semibold text-foreground">
@@ -38,7 +39,7 @@ export function ProjectsSection() {
                     aria-label={`GitHub repository for ${project.name}`}
                     className="text-muted-foreground transition-colors hover:text-primary"
                   >
-                    <Github className="h-5 w-5" />
+                    <Github className="h-5 w-5 hover:stroke-[2.5]" strokeWidth={2.5} />
                   </a>
                 )}
                 {project.demo && (
@@ -49,7 +50,7 @@ export function ProjectsSection() {
                     aria-label={`Live demo of ${project.name}`}
                     className="text-muted-foreground transition-colors hover:text-primary"
                   >
-                    <ExternalLink className="h-5 w-5" />
+                    <ExternalLink className="h-5 w-5" strokeWidth={2.5} />
                   </a>
                 )}
               </div>
@@ -58,13 +59,8 @@ export function ProjectsSection() {
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2">
-              {project.tech.map((t) => (
-                <span
-                  key={t}
-                  className="rounded bg-primary/10 px-3 py-1 font-mono text-sm text-primary"
-                >
-                  {t}
-                </span>
+              {project.tech.map((tech) => (
+                <DynamicTag key={tech} label={tech} />
               ))}
             </div>
           </motion.div>

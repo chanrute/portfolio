@@ -99,7 +99,7 @@ export function SNSSection() {
         <h2 className="text-3xl font-bold tracking-tight text-foreground">
           {t.sns.title}
         </h2>
-        <div className="mt-2 h-px w-12 bg-primary" />
+        <div className="mt-2 lg-accent-line w-12" />
       </div>
 
       <p className="max-w-md text-base leading-relaxed text-muted-foreground">
@@ -116,20 +116,20 @@ export function SNSSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * i, duration: 0.4, ease: "easeOut" }}
-            className="group flex items-center gap-4 rounded-lg bg-card/50 p-5 transition-colors hover:bg-card"
+            className="group flex items-center gap-4 lg lg-sm lg-dark lg-shadow-sm lg-card-hover p-5 transition-all"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-              <link.icon className="h-6 w-6 text-primary" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl lg lg-sm lg-dark" style={{ borderRadius: 12 }}>
+              <link.icon className="h-6 w-6 lg-accent" strokeWidth={2.5} />
             </div>
             <div className="flex flex-1 flex-col">
               <span className="text-lg font-medium text-foreground">
                 {link.name}
               </span>
-              <span className="font-mono text-base text-muted-foreground">
+              <span className="text-base text-muted-foreground">
                 {link.handle}
               </span>
             </div>
-            <ExternalLink className="h-5 w-5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+            <ExternalLink className="h-5 w-5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-hover:text-primary" strokeWidth={2.5} />
           </motion.a>
         ))}
       </div>

@@ -14,11 +14,11 @@ export function ResumeSection() {
         <h2 className="text-3xl font-bold tracking-tight text-foreground">
           {t.resume.title}
         </h2>
-        <div className="mt-2 h-px w-12 bg-primary" />
+        <div className="mt-2 lg-accent-line w-12" />
       </div>
 
       <div className="flex flex-col gap-4">
-        <h3 className="font-mono text-xs uppercase tracking-widest text-primary">
+        <h3 className="font-mono text-sm uppercase tracking-widest lg-accent md:text-base">
           {t.resume.career}
         </h3>
         <div className="flex flex-col gap-4">
@@ -28,16 +28,16 @@ export function ResumeSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i, duration: 0.4, ease: "easeOut" }}
-              className="rounded-lg bg-card/50 p-5"
+              className="lg lg-sm lg-dark lg-shadow-sm lg-card-hover p-5"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <FileText className="h-5 w-5 text-primary/50" />
+                  <FileText className="h-5 w-5 lg-accent" strokeWidth={2.5} />
                   <div>
                     <h4 className="text-lg font-semibold text-foreground">
                       {job.role}
                     </h4>
-                    <span className="font-mono text-sm text-primary/70">
+                    <span className="font-mono text-sm lg-accent-muted">
                       {job.company}
                     </span>
                   </div>
@@ -50,7 +50,7 @@ export function ResumeSection() {
                 {job.highlights.map((h) => (
                   <li
                     key={h}
-                    className="text-base leading-relaxed text-muted-foreground before:mr-3 before:text-primary/40 before:content-['\2022']"
+                    className="text-base leading-relaxed text-muted-foreground before:mr-3 before:font-bold before:text-primary before:content-['\2022']"
                   >
                     {h}
                   </li>
@@ -62,7 +62,7 @@ export function ResumeSection() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h3 className="font-mono text-xs uppercase tracking-widest text-primary">
+        <h3 className="font-mono text-sm uppercase tracking-widest lg-accent md:text-base">
           {t.resume.education}
         </h3>
         <div className="flex flex-col gap-4">
@@ -72,16 +72,16 @@ export function ResumeSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * (i + 3), duration: 0.4, ease: "easeOut" }}
-              className="rounded-lg bg-card/50 p-5"
+              className="lg lg-sm lg-dark lg-shadow-sm lg-card-hover p-5"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <FileText className="h-5 w-5 text-primary/50" />
+                  <FileText className="h-5 w-5 lg-accent" strokeWidth={2.5} />
                   <div>
                     <h4 className="text-lg font-semibold text-foreground">
                       {edu.degree}
                     </h4>
-                    <span className="font-mono text-sm text-primary/70">
+                    <span className="font-mono text-sm lg-accent-muted">
                       {edu.department}
                     </span>
                   </div>
@@ -94,7 +94,7 @@ export function ResumeSection() {
                 {edu.highlights.map((h) => (
                   <li
                     key={h}
-                    className="text-base leading-relaxed text-muted-foreground before:mr-3 before:text-primary/40 before:content-['\2022']"
+                    className="text-base leading-relaxed text-muted-foreground before:mr-3 before:font-bold before:text-primary before:content-['\2022']"
                   >
                     {h}
                   </li>

@@ -23,6 +23,7 @@ const TAG_EMOJI_MAP: Record<string, string> = {
   AWS: "☁️",
   Ruby: "💎",
   "Node.js": "🟢",
+  Jev: "🤖",
 }
 
 const FALLBACK_EMOJIS = ["🏷️", "💡", "🔧", "📦", "🛠️"]

@@ -49,6 +49,14 @@ const translations = {
           demo: "https://zenn.dev/smartround_dev/articles/9faa2d870b15b2",
         },
         {
+          name: "Jev UI",
+          description: "No-code playground UI for testing TypeSafe AI's System One model, Jev.",
+          tech: ["React", "TypeScript", "Hono", "LLM", "Jev"],
+          role: "Creator",
+          github: "https://github.com/chanrute/jev-ui",
+          demo: "",
+        },
+        {
           name: "Stooqifier",
           description: "Python-based stock price notification service for companies.",
           tech: ["Python", "Google Cloud", "Docker", "pandas"],
@@ -183,6 +191,14 @@ const translations = {
           role: "作成者",
           github: "https://github.com/chanrute/koog-sample?tab=readme-ov-file",
           demo: "https://zenn.dev/smartround_dev/articles/9faa2d870b15b2",
+        },
+        {
+          name: "Jev UI",
+          description: "TypeSafe AIのSystem OneモデルJevをコードを書かずに試せるプレイグラウンドUI。",
+          tech: ["React", "TypeScript", "Hono", "LLM", "Jev"],
+          role: "作成者",
+          github: "https://github.com/chanrute/jev-ui",
+          demo: "",
         },
         {
           name: "Stooqifier",

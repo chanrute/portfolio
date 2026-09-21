@@ -176,7 +176,7 @@ export function PortfolioShell() {
 
       {/* Main Display Area */}
       <main
-        className="flex flex-1 items-center justify-center overflow-hidden p-4 md:p-8 pt-24 md:pt-28"
+        className="flex flex-1 items-center justify-center overflow-hidden p-4 md:p-8 pt-10 md:pt-12"
         aria-hidden={mobileMenuOpen}
       >
         <AnimatePresence mode="wait">

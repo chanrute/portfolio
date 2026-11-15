@@ -54,8 +54,10 @@ portfolio/
 
 ## 必要要件
 
-- Node.js 18 以上
-- npm または pnpm
+- Node.js 20.9 以上
+- pnpm 10.29.2（`package.json` の `packageManager` に準拠）
+
+パッケージ管理は pnpm に統一し、`pnpm-lock.yaml` を管理します。
 
 ## セットアップ
 
@@ -64,7 +66,7 @@ portfolio/
 ```bash
 git clone <repository-url>
 cd portfolio
-npm install
+pnpm install --frozen-lockfile
 ```
 
 ## 環境変数
@@ -78,7 +80,7 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=your_ga_id
 ## 開発サーバーの起動
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ブラウザで <http://localhost:3000> を開きます。
@@ -86,15 +88,15 @@ npm run dev
 ## ビルド・本番起動
 
 ```bash
-npm run build
-npm start
+pnpm build
+pnpm start
 ```
 
 ## コマンド一覧
 
 | コマンド | 説明 |
 | --- | --- |
-| `npm run dev` | 開発サーバーを起動する |
-| `npm run build` | 本番用ビルドを生成する |
-| `npm start` | 本番サーバーを起動する |
-| `npm run lint` | ESLint でコードをチェックする |
+| `pnpm dev` | 開発サーバーを起動する |
+| `pnpm build` | 本番用ビルドを生成する |
+| `pnpm start` | 本番サーバーを起動する |
+| `pnpm lint` | ESLint でコードをチェックする |
